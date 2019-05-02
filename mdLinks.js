@@ -1,22 +1,17 @@
-let fs = require('fs');
-let path = require('path');
+const functions = require('./functions.js');
+const FileOrDir = process.argv[2];
 
-module.exports = () => {
-  const printDirectoryFiles = () => {
-    let fs = require('fs');
-    // read the specified directory and print each item
-    fs.readdir('node_modules/.bin', function(err, items) {
-      console.log(items);
-    });
-  };
-};
-//require the filesystem library from node
-// let fs = require('fs');
-// //read any file 'str' and specify utf8 encode to avoid getting the raw buffer
-// fs.readFile('README.md', 'utf8', (err, data) => {
-//   if (err) throw err;
-//   //console log file's data
-//   console.log(data);
-// });
+//Validate file or directory input from user
+if (FileOrDir === 'file') {
+  console.log(functions.getLinksFile(process.argv[3]));
+} else if (FileOrDir === 'directory') {
+  console.log(functions.readDirectory(process.argv[3]));
+} else {
+  console.log('Error: Must specify file or directory.');
+}
 
-/////////
+//console.log(functions.getLinks(process.argv[2]));
+
+//console.log(functions.writePath(process.argv[2]));
+//console.log(functions.readFile(process.argv[2]));
+//console.log(functions.readDirectory(process.argv[2]));
