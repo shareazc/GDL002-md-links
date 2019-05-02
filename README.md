@@ -1,5 +1,45 @@
 # Markdown Links
 
+## Diagrama de flujo
+
+[Diagrama de flujo](https://www.lucidchart.com/invitations/accept/29acda24-696b-4f9f-9ace-617b4fbefe21)
+
+Pseudo código aplicado para obtener url de un archivo:
+
+1. Especificar el archivo a analizar
+2. Leer archivo y decodificarlo
+3. Detectar url (uso de expresión regular)
+4. Imprimir coincidencias
+
+## Documentación técnica de la librería
+
+[Nodejs Curso Desde Cero](https://www.youtube.com/watch?v=BhvLIzVL8_o&t=2181s)
+
+[The Complete Node.js Developer Course](https://www.udemy.com/the-complete-nodejs-developer-course-2/)
+
+[Node.js docs](https://nodejs.org/dist/latest-v12.x/docs/api/)
+
+[Curso NodeJS - Leer archivos y programación asíncrona](https://www.youtube.com/watch?v=Q3stHsWowNg&t=424s)
+
+[Node JS for Begginers Series (The Net Ninja)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp)
+
+[LearnYouNode](https://nodeschool.io/)
+
+## Guía de Uso
+
+Al abrir el archivo y ejecutar desde terminal de la siguiente manera:
+
+\$node mdLinks [file/directory][name]
+
+Deberemos especificar si lo que vamos a analizar se trata de un archivo o de un directorio y finalmente su nombre. De momento la aplicación sólo soporta archivos/carpetas que se encuentren en su mismo directorio.
+
+En caso de analizar un archivo, nos retornará un arreglo con todos los enlaces que encontró.
+En caso de analizar un directorio, nos retornará un arreglo con todos los archivos encontrados.
+
+## Instalación desde GitHub
+
+npm install shareazc/GDL002-md-links
+
 ## Preámbulo
 
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
@@ -130,24 +170,24 @@ las siguientes propiedades:
 #### Ejemplo
 
 ```js
-const mdLinks = require("md-links");
+const mdLinks = require('md-links');
 
 // Caso 1 .- Ruta relativa sin options
-mdLinks("./some/example.md")
+mdLinks('./some/example.md')
   .then(links => {
     // => [{ href, text, file }]
   })
   .catch(console.error);
 
 // Caso  .- Ruta relativa con option (validate)
-mdLinks("./some/example.md", { validate: true })
+mdLinks('./some/example.md', { validate: true })
   .then(links => {
     // => [{ href, text, file, status, ok }]
   })
   .catch(console.error);
 
 // Caso 3 .- Ruta relativa de un directorio sin options
-mdLinks("./some/dir")
+mdLinks('./some/dir')
   .then(links => {
     // => [{ href, text, file }]
   })
