@@ -9,5 +9,9 @@
     "eslint": "eslint --ext .js ./test/",
     "pretest": "npm run eslint",
     "test": "jest"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "link-check": "^4.4.4"
   }
 }
