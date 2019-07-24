@@ -6,14 +6,7 @@ const FileOrDir = process.argv[2];
 if (FileOrDir === 'file') {
   console.log(functions.getLinksFile(process.argv[3]));
 } else if (FileOrDir === 'dir') {
-  console.log(functions.getLinksDirectory(process.argv[3]));
+  console.log('Error: You must specify the file within the directory. Try this "dirName/fileName.md"');
 } else {
   console.log('Error: Must specify file or directory.');
 }
-
-//console.log(functions.getLinksDirectory(process.argv[2]));
-
-//console.log(functions.getLinks(process.argv[2]));
-//console.log(functions.writePath(process.argv[2]));
-//console.log(functions.readFile(process.argv[2]));
-//console.log(functions.readDirectory(process.argv[2]));
