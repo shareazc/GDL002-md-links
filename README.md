@@ -45,7 +45,7 @@ Pseudo código aplicado para obtener url de un archivo:
 
 Al abrir el archivo y ejecutar desde terminal de la siguiente manera:
 
-\$node mdLinks [file/directory][name]
+\$node mdLinks file [file name]
 
 Deberemos especificar si lo que vamos a analizar se trata de un archivo o de un directorio y finalmente su nombre. De momento la aplicación sólo soporta archivos/carpetas que se encuentren en su mismo directorio.
 
